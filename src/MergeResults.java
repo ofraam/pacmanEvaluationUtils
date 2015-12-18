@@ -48,18 +48,18 @@ public class MergeResults {
 				String dir = directories[i];
 				System.out.println(dir);
 				//make sure that avg_curve is correct
-//				LearningCurve[] curves = new LearningCurve[30];
-//				for (int x=0; x<30; x++)
-//					curves[x] = new LearningCurve(100+1, 10, path+"/"+dir+"/curve"+x);
-//				for (int j=0;j<30;j++)
-//				{
-//					
-//					curves[j].save(path+"/"+dir+"/curve"+j);
-//					
-//				}
-//				LearningCurve avgCurve = new LearningCurve(Arrays.copyOf(curves, 30));
-//				avgCurve.save(path+"/"+dir+"/avg_curve");
-//				
+				LearningCurve[] curves = new LearningCurve[30];
+				for (int x=0; x<30; x++)
+					curves[x] = new LearningCurve(80+1, 10, path+"/"+dir+"/curve"+x);
+				for (int j=0;j<30;j++)
+				{
+					
+					curves[j].save(path+"/"+dir+"/curve"+j);
+					
+				}
+				LearningCurve avgCurve = new LearningCurve(Arrays.copyOf(curves, 30));
+				avgCurve.save(path+"/"+dir+"/avg_curve");
+				
 				
 				String filename = path+"/"+dir+"/avg_curve";
 				BufferedReader br = new BufferedReader(new FileReader(filename));
@@ -86,7 +86,7 @@ public class MergeResults {
 				
 			}
 			
-			writeResultsToFile("DataForWriteup/train300all_Dec16.csv",results);
+			writeResultsToFile("DataForWriteup/studentSensitivityAll.csv",results);
 		}
 		catch(Exception e)
 		{
